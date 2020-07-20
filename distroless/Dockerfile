@@ -1,4 +1,4 @@
-FROM just/builder AS builderstatic
+FROM justjs/builder AS builderstatic
 RUN make runtime-static
 
 FROM gcr.io/distroless/static
