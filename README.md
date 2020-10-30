@@ -4,8 +4,5 @@
 
 ```bash
 # based on debian/stretch-slim
-make debian
-
-# based on gcr.io/distroless
-make distroless
+docker build -t justjs/debian .
 ```
