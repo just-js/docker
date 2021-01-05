@@ -1,8 +1,22 @@
-# just-js docker images
+# just-js docker images and container builds
 
-## building
+## building debian docker image
 
 ```bash
-# based on debian/stretch-slim
-docker build -t justjs/debian .
+make debian
+```
+
+## building distroless docker image
+
+```bash
+make distroless
+```
+
+## running in gvisor
+
+```bash
+docker export $(docker create hello-world) | tar -xf - -C rootfs
+cp just rootfs/
+runsc spec -- /just
+sudo runsc run just
 ```
